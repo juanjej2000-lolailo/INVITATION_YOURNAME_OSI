@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Osiris ✨</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* ==============================
+           CUERPO Y FONDO
+        ============================== */
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(100, 90, 255, 0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(180, 80, 255, 0.20),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #050720,
+                    #111044,
+                    #25134d
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+
+        /* ==============================
+           ESTRELLAS
+        ============================== */
+
+        .stars {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+
+                radial-gradient(
+                    white 1px,
+                    transparent 1px
+                ),
+
+                radial-gradient(
+                    white 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                90px 90px,
+                150px 150px;
+
+            background-position:
+                10px 20px,
+                60px 80px;
+
+            opacity: 0.5;
+
+            animation:
+                starsMove 25s linear infinite;
+        }
+
+
+        .stars::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+
+                radial-gradient(
+                    white 1px,
+                    transparent 1px
+                );
+
+            background-size: 200px 200px;
+
+            opacity: 0.35;
+
+            animation:
+                starsMoveReverse 40s linear infinite;
+        }
+
+
+        @keyframes starsMove {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(100px);
+            }
+
+        }
+
+
+        @keyframes starsMoveReverse {
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-100px);
+            }
+
+        }
+
+
+        /* ==============================
+           ESTRELLA FUGAZ
+        ============================== */
+
+        .shooting-star {
+
+            position: fixed;
+
+            width: 140px;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    white
+                );
+
+            transform: rotate(-35deg);
+
+            opacity: 0;
+
+            animation:
+                shooting 7s linear infinite;
+
+            pointer-events: none;
+        }
+
+
+        @keyframes shooting {
+
+            0% {
+
+                left: -200px;
+
+                top: 5%;
+
+                opacity: 0;
+            }
+
+            10% {
+
+                opacity: 1;
+            }
+
+            25% {
+
+                left: 100%;
+
+                top: 55%;
+
+                opacity: 0;
+            }
+
+            100% {
+
+                left: 100%;
+
+                top: 55%;
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* ==============================
+           TARJETA
+        ============================== */
+
+        .card {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 90%;
+
+            max-width: 650px;
+
+            max-height: 90vh;
+
+            padding: 45px;
+
+            text-align: center;
+
+            background:
+                rgba(
+                    8,
+                    9,
+                    35,
+                    0.84
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            border-radius: 25px;
+
+            box-shadow:
+
+                0 0 30px
+                rgba(
+                    130,
+                    110,
+                    255,
+                    0.25
+                ),
+
+                0 20px 60px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.4
+                );
+
+            backdrop-filter: blur(12px);
+
+            overflow-y: auto;
+
+            animation:
+                appear 1.5s ease;
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px)
+                    scale(0.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* ==============================
+           TEXTOS
+        ============================== */
+
+        .subtitle {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            opacity: 0.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        h1 {
+
+            font-size: 38px;
+
+            font-weight: normal;
+
+            margin:
+                10px 0 30px;
+        }
+
+
+        .intro {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            opacity: 0.92;
+
+            margin:
+                18px 0;
+        }
+
+
+        .movie {
+
+            margin:
+                30px 0;
+
+            font-size: 30px;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 15px
+                rgba(
+                    150,
+                    150,
+                    255,
+                    0.8
+                );
+        }
+
+
+        .date {
+
+            padding: 18px;
+
+            margin:
+                28px 0;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        .question {
+
+            font-size: 21px;
+
+            margin-top: 30px;
+        }
+
+
+        /* ==============================
+           BOTONES
+        ============================== */
+
+        .buttons {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+
+        button {
+
+            border: none;
+
+            padding:
+                15px 25px;
+
+            border-radius: 40px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition:
+                all 0.3s ease;
+        }
+
+
+        .yes {
+
+            background: white;
+
+            color: #171052;
+
+            box-shadow:
+                0 0 15px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+        }
+
+
+        .yes:hover {
+
+            transform:
+                scale(1.08);
+
+            box-shadow:
+
+                0 0 15px white,
+
+                0 0 35px
+                rgba(
+                    170,
+                    150,
+                    255,
+                    0.8
+                );
+        }
+
+
+        .no {
+
+            background: transparent;
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.4
+                );
+        }
+
+
+        .no:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
+        }
+
+
+        /* ==============================
+           RESPUESTAS
+        ============================== */
+
+        #response {
+
+            min-height: 35px;
+
+            margin-top: 25px;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           PANTALLAS
+        ============================== */
+
+        #finalScreen {
+
+            display: none;
+
+            animation:
+                finalAppear 1.2s ease;
+        }
+
+
+        #noScreen {
+
+            display: none;
+
+            animation:
+                finalAppear 1.2s ease;
+        }
+
+
+        @keyframes finalAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* ==============================
+           NOSOTROS DOS
+        ============================== */
+
+        .couple-title {
+
+            font-size: 36px;
+
+            margin:
+                15px 0 5px;
+
+            font-weight: normal;
+
+            letter-spacing: 2px;
+        }
+
+
+        .initials {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 52px;
+
+            letter-spacing: 10px;
+
+            margin:
+                5px 0 25px;
+
+            text-shadow:
+                0 0 20px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.5
+                );
+        }
+
+
+        /* ==============================
+           HILO ROJO
+        ============================== */
+
+        .red-thread {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 35px;
+
+            margin:
+                15px 0 25px;
+        }
+
+
+        .red-thread::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 5%;
+
+            right: 5%;
+
+            top: 17px;
+
+            height: 2px;
+
+            background:
+                #c94a5b;
+
+            box-shadow:
+                0 0 8px
+                rgba(
+                    201,
+                    74,
+                    91,
+                    0.8
+                );
+
+            transform:
+                rotate(-2deg);
+        }
+
+
+        .red-thread::after {
+
+            content: "♥";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 3px;
+
+            transform:
+                translateX(-50%);
+
+            color:
+                #c94a5b;
+
+            font-size: 20px;
+
+            text-shadow:
+                0 0 10px
+                rgba(
+                    201,
+                    74,
+                    91,
+                    0.8
+                );
+        }
+
+
+        /* ==============================
+           BOLETOS / QR
+        ============================== */
+
+        .ticket-title {
+
+            font-size: 18px;
+
+            letter-spacing: 3px;
+
+            margin-top: 30px;
+        }
+
+
+        .qr-container {
+
+            margin:
+                25px auto 20px;
+
+            padding: 15px;
+
+            width: fit-content;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 25px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            animation:
+                qrAppear 1.5s ease;
+        }
+
+
+        @keyframes qrAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.8);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+            }
+
+        }
+
+
+        .qr-container img {
+
+            display: block;
+
+            width: 260px;
+
+            max-width: 65vw;
+
+            height: auto;
+        }
+
+
+        .small-text {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            opacity: 0.75;
+
+            margin-top: 15px;
+        }
+
+
+        .signature {
+
+            margin-top: 30px;
+
+            font-size: 17px;
+
+            font-style: italic;
+        }
+
+
+        /* ==============================
+           MAGIA AL ACEPTAR
+        ============================== */
+
+        .magic {
+
+            position: fixed;
+
+            pointer-events: none;
+
+            font-size: 25px;
+
+            animation:
+                magicFloat 3s ease-out forwards;
+
+            z-index: 100;
+        }
+
+
+        @keyframes magicFloat {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    scale(0.5);
+
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translateY(-180px)
+                    scale(1.5);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* ==============================
+           CELULARES
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            .card {
+
+                padding:
+                    30px 22px;
+
+                max-height: 92vh;
+            }
+
+
+            h1 {
+
+                font-size: 31px;
+            }
+
+
+            .intro {
+
+                font-size: 16px;
+            }
+
+
+            .movie {
+
+                font-size: 24px;
+            }
+
+
+            .question {
+
+                font-size: 18px;
+            }
+
+
+            .couple-title {
+
+                font-size: 30px;
+            }
+
+
+            .initials {
+
+                font-size: 43px;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+            }
+
+
+            button {
+
+                width: 85%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         FONDO
+    ============================== -->
+
+    <div class="stars"></div>
+
+    <div class="shooting-star"></div>
+
+
+
+    <!-- ==============================
+         TARJETA PRINCIPAL
+    ============================== -->
+
+    <div class="card">
+
+
+        <!-- =================================
+             PANTALLA 1: INVITACIÓN
+        ================================== -->
+
+        <div id="invitation">
+
+
+            <div class="subtitle">
+
+                PARA TI, MI COINCIDENCIA FAVORITA
+
+            </div>
+
+
+            <h1>
+
+                Osiris Quetzallí ✨
+
+            </h1>
+
+
+            <p class="intro">
+
+                Dicen que existe un hilo invisible
+                que une a las personas que están
+                destinadas a encontrarse.
+
+            </p>
+
+
+            <p class="intro">
+
+                A veces se enreda, se estira y parece
+                perderse entre caminos distintos...
+                pero de alguna manera siempre encuentra
+                la forma de volver a unir sus extremos.
+
+            </p>
+
+
+            <p class="intro">
+
+                Y si algo me gusta de nuestra historia,
+                es pensar que quizá el nuestro nunca
+                dejó de estar ahí.
+
+            </p>
+
+
+            <div class="movie">
+
+                🌌 YOUR NAME 🌌
+
+            </div>
+
+
+            <div class="date">
+
+                📅 <strong>11 de octubre de 2026</strong>
+
+                <br>
+
+                🕡 <strong>6:30 PM</strong>
+
+            </div>
+
+
+            <p class="question">
+
+                ¿Me concederías el honor
+                de acompañarme?
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <button
+                    class="yes"
+                    onclick="aceptar()">
+
+                    ✨ Sí, acepto
+
+                </button>
+
+
+                <button
+                    class="no"
+                    onclick="noAceptar()">
+
+                    😒 No, otaku mugrosito
+
+                </button>
+
+
+            </div>
+
+
+            <div id="response"></div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             PANTALLA 2: SÍ
+        ================================== -->
+
+        <div id="finalScreen">
+
+
+            <div class="subtitle">
+
+                UNA CITA MÁS PARA NUESTRA HISTORIA
+
+            </div>
+
+
+            <div class="couple-title">
+
+                NOSOTROS DOS
+
+            </div>
+
+
+            <div class="initials">
+
+                J + O
+
+            </div>
+
+
+            <div class="red-thread"></div>
+
+
+            <p class="intro">
+
+                Quizá el hilo rojo nunca se trató
+                de encontrar a alguien perfecto.
+
+            </p>
+
+
+            <p class="intro">
+
+                Quizá solamente se trataba de encontrar
+                a alguien con quien valiera la pena
+                seguir caminando.
+
+            </p>
+
+
+            <p class="intro">
+
+                Y después de todo lo que hemos vivido,
+                me gusta pensar que el nuestro todavía
+                nos sigue llevando al mismo lugar.
+
+            </p>
+
+
+            <p class="intro">
+
+                <strong>A nosotros.</strong>
+
+            </p>
+
+
+            <div class="date">
+
+                📅 <strong>11 · 10 · 2026</strong>
+
+                <br>
+
+                🕡 <strong>6:30 PM</strong>
+
+                <br>
+
+                🌌 <strong>YOUR NAME</strong>
+
+            </div>
+
+
+            <div class="ticket-title">
+
+                🎟️ NUESTROS BOLETOS
+
+            </div>
+
+
+            <div class="qr-container">
+
+
+                <img
+                    src="Boletos.jpeg"
+                    alt="Nuestros boletos">
+
+
+            </div>
+
+
+            <div class="small-text">
+
+                Guarda bien este pedacito de nuestra
+                próxima cita para contarle a Vicentito
+                todas estas pequeñas historias que fuimos
+                construyendo juntos. 🤍
+
+            </div>
+
+
+            <div class="signature">
+
+                Con cariño,
+
+                <br>
+
+                <strong>Tu Juanito 🤍</strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             PANTALLA 3: NO
+        ================================== -->
+
+        <div id="noScreen">
+
+
+            <div class="subtitle">
+
+                RESPUESTA RECIBIDA
+
+            </div>
+
+
+            <h1>
+
+                Está bien... 🥺
+
+            </h1>
+
+
+            <p class="intro">
+
+                Aunque debo admitir que esperaba
+                otra respuesta.
+
+            </p>
+
+
+            <p class="intro">
+
+                Pero respeto tu decisión,
+                mi hermosa Osiris.
+
+            </p>
+
+
+            <p class="intro">
+
+                Eso sí...
+
+                <br><br>
+
+                Me tomó bastante tiempo hacer
+                esta invitación. xd
+
+            </p>
+
+
+            <div class="red-thread"></div>
+
+
+            <p class="question">
+
+                ¿Quieres reconsiderarlo?
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <button
+                    class="yes"
+                    onclick="volverInvitacion()">
+
+                    ✨ Lo pensé mejor
+
+                </button>
+
+
+                <button
+                    class="no"
+                    onclick="rechazoDefinitivo()">
+
+                    No, definitivamente no
+
+                </button>
+
+
+            </div>
+
+
+            <div id="noResponse"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* ==============================
+           ACEPTAR
+        ============================== */
+
+        function aceptar() {
+
+
+            crearMagia();
+
+
+            setTimeout(function() {
+
+
+                document.getElementById(
+                    "invitation"
+                ).style.display = "none";
+
+
+                document.getElementById(
+                    "finalScreen"
+                ).style.display = "block";
+
+
+            }, 700);
+
+        }
+
+
+
+        /* ==============================
+           NO
+        ============================== */
+
+        function noAceptar() {
+
+
+            document.getElementById(
+                "invitation"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "noScreen"
+            ).style.display = "block";
+
+
+        }
+
+
+
+        /* ==============================
+           VOLVER
+        ============================== */
+
+        function volverInvitacion() {
+
+
+            document.getElementById(
+                "noScreen"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "invitation"
+            ).style.display = "block";
+
+
+        }
+
+
+
+        /* ==============================
+           RECHAZO DEFINITIVO
+        ============================== */
+
+        function rechazoDefinitivo() {
+
+
+            document.getElementById(
+                "noResponse"
+            ).innerHTML =
+
+                "Está bien. 🥺 " +
+
+                "Entonces guardaré esta invitación " +
+
+                "como evidencia de que lo intenté. xd";
+
+
+        }
+
+
+
+        /* ==============================
+           ESTRELLAS AL ACEPTAR
+        ============================== */
+
+        function crearMagia() {
+
+
+            const emojis = [
+
+                "✨",
+                "🌟",
+                "💫",
+                "🤍",
+                "🌠"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 25;
+                i++
+            ) {
+
+
+                const elemento =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                elemento.classList.add(
+                    "magic"
+                );
+
+
+                elemento.innerHTML =
+                    emojis[
+                        Math.floor(
+                            Math.random() *
+                            emojis.length
+                        )
+                    ];
+
+
+                elemento.style.left =
+                    Math.random() *
+                    window.innerWidth +
+                    "px";
+
+
+                elemento.style.top =
+                    (
+                        window.innerHeight *
+                        0.7
+                    ) +
+                    "px";
+
+
+                elemento.style.animationDelay =
+                    Math.random() *
+                    0.6 +
+                    "s";
+
+
+                document.body.appendChild(
+                    elemento
+                );
+
+
+                setTimeout(function() {
+
+
+                    elemento.remove();
+
+
+                }, 3500);
+
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
